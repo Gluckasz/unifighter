@@ -2,22 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class EnlargeOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public float scaleFactor = 1.2f; // The factor by which to scale the object
-
+    public float newScale = 0.7f;
+    public float oldScale = 0.34f;
     private bool isHovering = false;
-    private Vector3 originalScale; // The original scale of the object
-    private void Start()
-    {
-        originalScale = transform.localScale;
-    }
+    private HorizontalLayoutGroup horizontalLayoutGroup;
     private void Update()
     {
         if (isHovering)
         {
-            transform.localScale = originalScale * scaleFactor;
+            transform.localScale = new Vector3(newScale, newScale, newScale);
+            horizontalLayoutGroup = GetComponentInParent<HorizontalLayoutGroup>();
         }
     }
     public void OnPointerEnter(PointerEventData eventData)
@@ -28,7 +26,8 @@ public class EnlargeOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public void OnPointerExit(PointerEventData eventData)
     {
         isHovering = false;
-        transform.localScale = originalScale;
+        transform.localScale = new Vector3(oldScale, oldScale, oldScale);
+        LayoutRebuilder.ForceRebuildLayoutImmediate(horizontalLayoutGroup.GetComponent<RectTransform>());
     }
 }
 

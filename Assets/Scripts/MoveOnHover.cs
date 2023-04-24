@@ -7,14 +7,15 @@ using UnityEngine.UI;
 public class MoveOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public float yOffset = 45f;
-
+    private HorizontalLayoutGroup horizontalLayoutGroup;
     private float yPos = 0;
     private bool isHovering = false;
     private RectTransform rectTransform;
 
-    private void Start()
+    private void OnTransformParentChanged()
     {
         rectTransform = GetComponent<RectTransform>();
+        horizontalLayoutGroup = GetComponentInParent<HorizontalLayoutGroup>();
     }
     private void Update()
     {
@@ -32,5 +33,6 @@ public class MoveOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public void OnPointerExit(PointerEventData eventData)
     {
         isHovering = false;
+        LayoutRebuilder.ForceRebuildLayoutImmediate(horizontalLayoutGroup.GetComponent<RectTransform>());
     }
 }

@@ -8,7 +8,7 @@ public class BringToFrontOnHover : MonoBehaviour, IPointerEnterHandler, IPointer
 {
     private HorizontalLayoutGroup horizontalLayoutGroup;
     private bool addedOne = false;
-    private void Start()
+    private void OnTransformParentChanged()
     {       
         horizontalLayoutGroup = GetComponentInParent<HorizontalLayoutGroup>();
     }
@@ -16,7 +16,6 @@ public class BringToFrontOnHover : MonoBehaviour, IPointerEnterHandler, IPointer
     public void OnPointerEnter(PointerEventData eventData)
     {
         horizontalLayoutGroup.enabled = false;
-        Debug.Log(transform.parent.childCount);
         if (transform.parent.childCount > transform.GetSiblingIndex() + 1)
         {
             transform.SetSiblingIndex(transform.GetSiblingIndex() + 1);
