@@ -9,15 +9,30 @@ public class EnlargeOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public float newScale = 0.7f;
     public float oldScale = 0.34f;
     private bool isHovering = false;
-    private HorizontalLayoutGroup horizontalLayoutGroup;
+    private bool isDragging = false;
     private void Update()
     {
         if (isHovering)
         {
             transform.localScale = new Vector3(newScale, newScale, newScale);
-            horizontalLayoutGroup = GetComponentInParent<HorizontalLayoutGroup>();
         }
     }
+    void OnMouseDown()
+    {
+        isDragging = true;
+    }
+    void OnMouseDrag()
+    {
+        if (isDragging)
+        {
+            transform.localScale = new Vector3(newScale, newScale, newScale);
+        }
+    }
+    void OnMouseUp()
+    {
+        isDragging = false;
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         isHovering = true;
@@ -26,8 +41,10 @@ public class EnlargeOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public void OnPointerExit(PointerEventData eventData)
     {
         isHovering = false;
-        transform.localScale = new Vector3(oldScale, oldScale, oldScale);
-        LayoutRebuilder.ForceRebuildLayoutImmediate(horizontalLayoutGroup.GetComponent<RectTransform>());
+        if (!isDragging)
+        {
+            transform.localScale = new Vector3(oldScale, oldScale, oldScale);
+        }
     }
 }
 
