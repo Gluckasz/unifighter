@@ -22,7 +22,11 @@ public class BringToFrontOnHover : MonoBehaviour, IPointerEnterHandler, IPointer
             addedOne = true;
         }
     }
-
+    // If the card is clicked, don't move it then in SiblingIndex
+    void OnMouseDown()
+    {
+        addedOne = false;
+    }
     public void OnPointerExit(PointerEventData eventData)
     {
         if (transform.parent.childCount > transform.GetSiblingIndex() + 1 || addedOne)
