@@ -35,4 +35,8 @@ public class MoveOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         isHovering = false;
         LayoutRebuilder.ForceRebuildLayoutImmediate(horizontalLayoutGroup.GetComponent<RectTransform>());
     }
+    private void OnDisable()
+    {
+        isHovering = false;
+    }
 }
