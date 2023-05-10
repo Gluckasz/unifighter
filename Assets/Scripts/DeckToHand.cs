@@ -6,11 +6,12 @@ public class DeckToHand : MonoBehaviour
 {
     public GameObject deck;
     public GameObject hand;
+    public GameObject discard;
     private void OnMouseDown()
     {
         for (int i = 0; i < hand.transform.childCount; i++)
         {
-            GameObject.Destroy(hand.transform.GetChild(i).gameObject);
+            hand.transform.GetChild(i).SetParent(discard.transform);
         }
         int deckLen = deck.transform.childCount;
         for (int i = 0; i < deckLen; i++)
