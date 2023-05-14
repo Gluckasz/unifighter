@@ -14,6 +14,7 @@ public class DragAndDrop : MonoBehaviour
     private BringToFrontOnHover bringToFrontOnHover;
     private MoveOnHover moveOnHover;
     private HorizontalLayoutGroup horizontalLayoutGroup;
+    private OnPlay onPlayScript;
 
     private void OnTransformParentChanged()
     {
@@ -85,7 +86,8 @@ public class DragAndDrop : MonoBehaviour
             // If card dropped anywhere else, play it and insert it to discard pile
             else
             {
-                // TODO Play a card script should be enabled here
+                onPlayScript = GetComponent<OnPlay>();
+                onPlayScript.enabled = true;
                 gameObject.transform.SetParent(discardPile.transform);
             }
         }

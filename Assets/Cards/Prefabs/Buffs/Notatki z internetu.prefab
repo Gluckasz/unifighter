@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8560848435921619895, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
       propertyPath: m_text
-      value: Randomowy buff do ataku (lub lekki debuff)
+      value: Randomowy buff do ataku
       objectReference: {fileID: 0}
     - target: {fileID: 8560848435921619895, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
       propertyPath: m_fontSize

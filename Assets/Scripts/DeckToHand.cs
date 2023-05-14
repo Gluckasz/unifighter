@@ -9,15 +9,16 @@ public class DeckToHand : MonoBehaviour
     public GameObject discard;
     private void OnMouseDown()
     {
-        for (int i = 0; i < hand.transform.childCount; i++)
+        int handLen = hand.transform.childCount;
+        for (int i = 0; i < handLen; i++)
         {
-            hand.transform.GetChild(i).SetParent(discard.transform);
+            hand.transform.GetChild(0).SetParent(discard.transform);
         }
         int deckLen = deck.transform.childCount;
         for (int i = 0; i < deckLen; i++)
         {
             // If the hand size reached, stop getting cards out of deck
-            if (i >= 6)
+            if (i >= 7)
             {
                 break;
             }
