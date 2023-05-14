@@ -50,7 +50,10 @@ public class DragAndDrop : MonoBehaviour
         // Set this card to be on the first plane - also it will make sure that card is inserted as first after dropping it to hand
         int siblingCount = gameObject.transform.parent.childCount;
         transform.SetSiblingIndex(siblingCount);
-        horizontalLayoutGroup.enabled = false;
+        if (horizontalLayoutGroup != null)
+        {
+            horizontalLayoutGroup.enabled = false;
+        }
     }
 
     void OnMouseDrag()
@@ -86,9 +89,11 @@ public class DragAndDrop : MonoBehaviour
             // If card dropped anywhere else, play it and insert it to discard pile
             else
             {
+                gameObject.transform.SetParent(discardPile.transform);
+                // Set the position to be outside of a screen to make player not able to click at this card
+                rectTransform.anchoredPosition = new Vector2(1300, 400);
                 onPlayScript = GetComponent<OnPlay>();
                 onPlayScript.enabled = true;
-                gameObject.transform.SetParent(discardPile.transform);
             }
         }
     }
