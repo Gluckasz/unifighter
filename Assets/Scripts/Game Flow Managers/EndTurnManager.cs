@@ -10,15 +10,33 @@ public class EndTurnManager : MonoBehaviour
     public GameObject deck;
     public GameObject discard;
     public GameObject hand;
+    private GameObject enemy;
+    private EnemyMoveManager enemyMoveManagerScript;
+    private bool enemyMoveDone = true;
+
+    private void Awake()
+    {
+        enemy = GameObject.FindGameObjectWithTag("Enemy");
+        enemyMoveManagerScript = enemy.GetComponent<EnemyMoveManager>();
+    }
     private void OnMouseDown()
     {
-        Debug.Log("Mouse down on " + gameObject.name);
-        // Transfer control to enemy and discard all remaining cards
-        int handLen = hand.transform.childCount;
-        for (int i = 0; i < handLen; i++)
+        if (enemyMoveDone)
         {
-            hand.transform.GetChild(0).SetParent(discard.transform);
+            Debug.Log("Mouse down on " + gameObject.name);
+            // Transfer control to enemy and discard all remaining cards
+            int handLen = hand.transform.childCount;
+            for (int i = 0; i < handLen; i++)
+            {
+                hand.transform.GetChild(0).SetParent(discard.transform);
+            }
+            enemyMoveDone = false;
+            enemyMoveManagerScript.EnemyTurn();
+            enemyMoveDone = true;
         }
+    }
+    public void NewTurn()
+    {
         // Start a new turn
         int handCounter = 0;
         while (handCounter < 7)
@@ -40,7 +58,7 @@ public class EndTurnManager : MonoBehaviour
                 {
                     break;
                 }
-               
+
             }
             // When the hand size reached, stop getting cards out of deck
             deck.transform.GetChild(0).SetParent(hand.transform);
