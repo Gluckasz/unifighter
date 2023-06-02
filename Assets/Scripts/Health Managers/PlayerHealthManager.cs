@@ -7,7 +7,7 @@ public class PlayerHealthManager : MonoBehaviour
     public int health = 5;
     public void TakeDamage(int damage)
     {
-        if (health > 0)
+        if (health - damage > 0)
         {
             // Take damage
             health -= damage;

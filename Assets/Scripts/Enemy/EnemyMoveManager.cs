@@ -7,15 +7,17 @@ public class EnemyMoveManager : MonoBehaviour
 {
     public List<string> Moves = new List<string>();
     private string move;
-    private EnemyAttack enemyAttack;
+    private EnemyAttack enemyAttackScript;
     private GameObject endTurnManager;
     private EndTurnManager endTurnManagerScript;
+    private EnemyAttackAndBlock enemyAttackAndBlockScript;
 
     private void Awake()
     {
         endTurnManager = GameObject.FindGameObjectWithTag("EndTurnManager");
         endTurnManagerScript = endTurnManager.GetComponent<EndTurnManager>();
-        enemyAttack = GetComponent<EnemyAttack>();
+        enemyAttackScript = GetComponent<EnemyAttack>();
+        enemyAttackAndBlockScript = GetComponent<EnemyAttackAndBlock>();
     }
     private void Start()
     {
@@ -30,9 +32,14 @@ public class EnemyMoveManager : MonoBehaviour
 
     private void EnemyMove(string move)
     {
-        if (move == "Attack")
+        switch (move)
         {
-            enemyAttack.enabled = true;
+            case "Attack":
+                enemyAttackScript.enabled = true;
+                break;
+            case "Attack and block":
+                enemyAttackAndBlockScript.enabled = true;
+                break;
         }
     }
 

@@ -302,7 +302,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2bc5a8cbc285e714d83294519c3d2a49, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4b4806b6f1fc206438551a0c187017f7, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -485,7 +485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a84ef39ea44c1a84fba112aff3a4ed29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 50
 --- !u!1 &634536789
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,6 +1300,7 @@ GameObject:
   - component: {fileID: 1690536298}
   - component: {fileID: 1690536299}
   - component: {fileID: 1690536300}
+  - component: {fileID: 1690536301}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -1386,7 +1387,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22f67e189c053474bb4e3f67c9f9c18e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 50
+  block: 0
 --- !u!114 &1690536299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1401,6 +1403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Moves:
   - Attack
+  - Attack and block
 --- !u!114 &1690536300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1413,4 +1416,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76612e53de44cd44587c0d8091cdb0ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 9
+--- !u!114 &1690536301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690536295}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dd293af574e81458a600693dd12d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
+  blockGain: 12
