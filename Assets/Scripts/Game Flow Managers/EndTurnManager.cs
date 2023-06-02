@@ -49,8 +49,9 @@ public class EndTurnManager : MonoBehaviour
                 {
                     for (int j = 0; j < discardLen; j++)
                     {
+                        int randomNumber = Random.Range(0, discard.transform.childCount - 1);
                         // When the deck size reached, stop getting cards out of discard
-                        discard.transform.GetChild(0).SetParent(deck.transform);
+                        discard.transform.GetChild(randomNumber).SetParent(deck.transform);
                     }
                 }
                 // If there are no cards to insert to deck, just stop putting cards in deck
