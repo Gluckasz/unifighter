@@ -1302,6 +1302,8 @@ GameObject:
   - component: {fileID: 1690536300}
   - component: {fileID: 1690536301}
   - component: {fileID: 1690536302}
+  - component: {fileID: 1690536304}
+  - component: {fileID: 1690536303}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -1407,6 +1409,8 @@ MonoBehaviour:
   - Attack
   - Attack and block
   - Heal from block
+  - Add token
+  token: 0
 --- !u!114 &1690536300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1444,5 +1448,30 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65e8d02aa7651a44d9fa41e7b26f1f48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1690536303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690536295}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37128f176aa77cb468ad07cf5ac871c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 12
+--- !u!114 &1690536304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690536295}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2926c3c4a9f5ff045a7e1fa6991a2b73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

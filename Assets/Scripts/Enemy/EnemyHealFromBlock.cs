@@ -12,7 +12,6 @@ public class EnemyHealFromBlock : MonoBehaviour
     }
     private void OnEnable()
     {
-        // Deal damage to the enemy
         enemyHealthScript.ChangeHealth(enemyHealthScript.block);
         this.enabled = false;
     }
