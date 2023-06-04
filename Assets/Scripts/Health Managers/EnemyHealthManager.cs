@@ -6,6 +6,11 @@ public class EnemyHealthManager : MonoBehaviour
 {
     public int health = 5;
     public int block = 0;
+    public int maxHealth = 42;
+    private void Awake()
+    {
+        health = maxHealth;
+    }
     public void TakeDamage(int damage)
     {
         if (block - damage > 0)
@@ -22,12 +27,22 @@ public class EnemyHealthManager : MonoBehaviour
         else
         {
             // Enemy dies
-            health = 5;
+            health = maxHealth;
         }
     }
     public void ChangeBlock(int blockChange)
     {
         block += blockChange;
     }
-
+    public void ChangeHealth(int healthChange)
+    {
+        if (healthChange + health > maxHealth)
+        {
+            health = maxHealth;
+        }
+        else
+        {
+            health += healthChange;
+        }
+    }
 }
