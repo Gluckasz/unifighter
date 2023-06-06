@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealthManager : MonoBehaviour
+public class HealthManager : MonoBehaviour
 {
     public int health = 5;
     public int block = 0;
@@ -26,7 +26,7 @@ public class EnemyHealthManager : MonoBehaviour
         }
         else
         {
-            // Enemy dies
+            // Dies
             health = maxHealth;
         }
     }

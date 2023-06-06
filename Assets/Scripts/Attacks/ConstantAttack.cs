@@ -6,11 +6,11 @@ public class ConstantAttack : MonoBehaviour
 {
     public int damage = 1;
     private GameObject enemy;
-    private EnemyHealthManager enemyHealthScript;
+    private HealthManager enemyHealthScript;
     private void Awake()
     {
         enemy = GameObject.FindGameObjectWithTag("Enemy");
-        enemyHealthScript = enemy.GetComponent<EnemyHealthManager>();
+        enemyHealthScript = enemy.GetComponent<HealthManager>();
     }
     private void OnEnable()
     {

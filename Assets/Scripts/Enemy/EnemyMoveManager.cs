@@ -11,7 +11,7 @@ public class EnemyMoveManager : MonoBehaviour
     private string move;
     private EnemyAttack enemyAttackScript;
     private GameObject endTurnManager;
-    private EnemyHealthManager enemyHealthManagerScript;
+    private HealthManager enemyHealthManagerScript;
     private EndTurnManager endTurnManagerScript;
     private EnemyAttackAndBlock enemyAttackAndBlockScript;
     private EnemyHealFromBlock enemyHealFromBlockScript;
@@ -21,7 +21,7 @@ public class EnemyMoveManager : MonoBehaviour
     {
         endTurnManager = GameObject.FindGameObjectWithTag("EndTurnManager");
         endTurnManagerScript = endTurnManager.GetComponent<EndTurnManager>();
-        enemyHealthManagerScript = GetComponent<EnemyHealthManager>();
+        enemyHealthManagerScript = GetComponent<HealthManager>();
         enemyAttackScript = GetComponent<EnemyAttack>();
         enemyAttackAndBlockScript = GetComponent<EnemyAttackAndBlock>();
         enemyHealFromBlockScript = GetComponent<EnemyHealFromBlock>();

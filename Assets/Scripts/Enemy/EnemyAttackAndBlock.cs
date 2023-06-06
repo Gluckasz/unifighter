@@ -6,15 +6,15 @@ public class EnemyAttackAndBlock : MonoBehaviour
 {
     public int damage = 3;
     public int blockGain = 12;
-    private PlayerHealthManager playerHealthScript;
-    private EnemyHealthManager enemyHealthScript;
+    private HealthManager playerHealthScript;
+    private HealthManager enemyHealthScript;
     private GameObject player;
 
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        playerHealthScript = player.GetComponent<PlayerHealthManager>();
-        enemyHealthScript = this.GetComponent<EnemyHealthManager>();
+        playerHealthScript = player.GetComponent<HealthManager>();
+        enemyHealthScript = this.GetComponent<HealthManager>();
     }
     private void OnEnable()
     {

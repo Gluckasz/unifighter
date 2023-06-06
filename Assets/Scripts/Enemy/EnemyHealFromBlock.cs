@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemyHealFromBlock : MonoBehaviour
 {
-    private EnemyHealthManager enemyHealthScript;
+    private HealthManager enemyHealthScript;
 
     private void Awake()
     {
-        enemyHealthScript = this.GetComponent<EnemyHealthManager>();
+        enemyHealthScript = this.GetComponent<HealthManager>();
     }
     private void OnEnable()
     {

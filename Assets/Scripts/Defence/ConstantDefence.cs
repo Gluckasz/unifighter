@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAttack : MonoBehaviour
+public class ConstantDefence : MonoBehaviour
 {
-    public int damage = 1;
-    private HealthManager playerHealthScript;
+    public int blockGain = 1;
     private GameObject player;
-
+    private HealthManager playerHealthScript;
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -16,7 +15,7 @@ public class EnemyAttack : MonoBehaviour
     private void OnEnable()
     {
         // Deal damage to the enemy
-        playerHealthScript.TakeDamage(damage);
+        playerHealthScript.ChangeBlock(blockGain);
         this.enabled = false;
     }
 }
