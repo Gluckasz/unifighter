@@ -874,7 +874,7 @@ GameObject:
   - component: {fileID: 1225420246}
   m_Layer: 5
   m_Name: Hand
-  m_TagString: Untagged
+  m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -988,7 +988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91032468e72e17c4489ade6035a1117b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxElements: 7
+  maxElements: 3
 --- !u!1 &1402616206
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,6 +1043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b183607b97a5fb4d84669be36442fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHandSize: 3
   deck: {fileID: 961957231}
   discard: {fileID: 634536789}
   hand: {fileID: 1225420240}

@@ -7,6 +7,7 @@ using UnityEngine.XR;
 
 public class EndTurnManager : MonoBehaviour
 {
+    public int maxHandSize = 3;
     public GameObject deck;
     public GameObject discard;
     public GameObject hand;
@@ -39,7 +40,7 @@ public class EndTurnManager : MonoBehaviour
     {
         // Start a new turn
         int handCounter = 0;
-        while (handCounter < 7)
+        while (handCounter < maxHandSize)
         {
             if (deck.transform.childCount == 0)
             {

@@ -12,6 +12,16 @@ public class OnPlay : MonoBehaviour
         {
             constantAttackScript.enabled = true;
         }
+        ConstantDefence constantDefenceScript = GetComponent<ConstantDefence>();
+        if (constantDefenceScript != null )
+        {
+            constantDefenceScript.enabled = true;
+        }
+        DrawCards drawCardsScript = GetComponent<DrawCards>();
+        if (drawCardsScript != null)
+        {
+            drawCardsScript.enabled = true;
+        }
         this.enabled = false;
     }
 }

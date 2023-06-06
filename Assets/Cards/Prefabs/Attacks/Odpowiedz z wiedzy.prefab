@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8560848435921619895, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
       propertyPath: m_text
-      value: "Sta\u0142a warto\u015B\u0107 ataku"
+      value: Deal 6 damage
       objectReference: {fileID: 0}
     - target: {fileID: 8560848437525138270, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
       propertyPath: m_Name

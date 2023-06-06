@@ -8,6 +8,7 @@ TagManager:
   - DiscardPile
   - Enemy
   - EndTurnManager
+  - Hand
   layers:
   - Default
   - TransparentFX
