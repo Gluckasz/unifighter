@@ -12,13 +12,17 @@ public class EndTurnManager : MonoBehaviour
     public GameObject discard;
     public GameObject hand;
     private GameObject enemy;
+    private GameObject player;
     private EnemyMoveManager enemyMoveManagerScript;
+    private EnergyManager energyManagerScript;
     private bool enemyMoveDone = true;
 
     private void Awake()
     {
         enemy = GameObject.FindGameObjectWithTag("Enemy");
         enemyMoveManagerScript = enemy.GetComponent<EnemyMoveManager>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        energyManagerScript = player.GetComponent<EnergyManager>();
     }
     private void OnMouseDown()
     {
@@ -66,5 +70,6 @@ public class EndTurnManager : MonoBehaviour
             deck.transform.GetChild(0).SetParent(hand.transform);
             handCounter++;
         }
+        energyManagerScript.SetEnergy(energyManagerScript.maxEnergy);
     }
 }

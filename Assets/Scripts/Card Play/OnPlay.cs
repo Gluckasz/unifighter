@@ -6,6 +6,8 @@ public class OnPlay : MonoBehaviour
 {
     private void OnEnable()
     {
+        EnergyDrain energyDrainScript = GetComponent<EnergyDrain>();
+        energyDrainScript.enabled = true;
         // Enable all scripts that take action after card play
         ConstantAttack constantAttackScript = GetComponent<ConstantAttack>();
         if (constantAttackScript != null )

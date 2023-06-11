@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DragAndDrop : MonoBehaviour
 {
     private GameObject discardPile;
+    private GameObject player;
     public bool isDragging = false;
     private Vector3 offset;
     private RectTransform rectTransform;
@@ -15,6 +16,8 @@ public class DragAndDrop : MonoBehaviour
     private MoveOnHover moveOnHover;
     private HorizontalLayoutGroup horizontalLayoutGroup;
     private OnPlay onPlayScript;
+    private EnergyDrain energyDrainScript;
+    private EnergyManager energyManagerScript;
 
     private void OnTransformParentChanged()
     {
@@ -26,6 +29,7 @@ public class DragAndDrop : MonoBehaviour
         horizontalLayoutGroup = GetComponentInParent<HorizontalLayoutGroup>();
         if (horizontalLayoutGroup != null)
         {
+
             containerRectTransform = horizontalLayoutGroup.GetComponent<RectTransform>();
             horizontalLayoutGroup.enabled = true;
             LayoutRebuilder.ForceRebuildLayoutImmediate(containerRectTransform);
@@ -36,6 +40,9 @@ public class DragAndDrop : MonoBehaviour
             canvas = GetComponentInParent<Canvas>();
             bringToFrontOnHover.enabled = true;
             moveOnHover.enabled = true;
+            player = GameObject.FindGameObjectWithTag("Player");
+            energyManagerScript = player.GetComponent<EnergyManager>();
+            energyDrainScript = GetComponent<EnergyDrain>();
         }
     }
 
@@ -81,6 +88,14 @@ public class DragAndDrop : MonoBehaviour
             // If card dropped on hand object, just insert it back to hand
             if (IsMouseWithinContainerBounds())
             {
+                horizontalLayoutGroup.enabled = true;
+                LayoutRebuilder.ForceRebuildLayoutImmediate(containerRectTransform);
+                bringToFrontOnHover.enabled = true;
+                moveOnHover.enabled = true;
+            }
+            else if (energyManagerScript.energy < energyDrainScript.energyCost * -1)
+            {
+                Debug.Log("Energy to low");
                 horizontalLayoutGroup.enabled = true;
                 LayoutRebuilder.ForceRebuildLayoutImmediate(containerRectTransform);
                 bringToFrontOnHover.enabled = true;
