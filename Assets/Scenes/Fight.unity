@@ -1493,6 +1493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHandSize: 5
+  setEnergy: 3
   deck: {fileID: 961957231}
   discard: {fileID: 634536789}
   hand: {fileID: 1225420240}
@@ -1863,6 +1864,7 @@ GameObject:
   - component: {fileID: 1690536302}
   - component: {fileID: 1690536304}
   - component: {fileID: 1690536303}
+  - component: {fileID: 1690536305}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -1970,6 +1972,7 @@ MonoBehaviour:
   - Heal from block
   - Add token
   token: 0
+  move: 
 --- !u!114 &1690536300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1982,7 +1985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76612e53de44cd44587c0d8091cdb0ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 18
+  damage: 20
 --- !u!114 &1690536301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1995,7 +1998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47dd293af574e81458a600693dd12d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 6
+  damage: 8
   blockGain: 12
 --- !u!114 &1690536302
 MonoBehaviour:
@@ -2021,7 +2024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37128f176aa77cb468ad07cf5ac871c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 36
+  damage: 40
 --- !u!114 &1690536304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2034,6 +2037,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2926c3c4a9f5ff045a7e1fa6991a2b73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1690536305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690536295}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efa12802b37cc2b488343fb7fd9f4f0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hornyStack: 0
 --- !u!1001 &1798815312
 PrefabInstance:
   m_ObjectHideFlags: 0

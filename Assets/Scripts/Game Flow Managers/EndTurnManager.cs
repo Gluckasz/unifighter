@@ -8,6 +8,7 @@ using UnityEngine.XR;
 public class EndTurnManager : MonoBehaviour
 {
     public int maxHandSize = 3;
+    public int setEnergy = 3;
     public GameObject deck;
     public GameObject discard;
     public GameObject hand;
@@ -71,6 +72,7 @@ public class EndTurnManager : MonoBehaviour
             deck.transform.GetChild(0).SetParent(hand.transform);
             handCounter++;
         }
-        energyManagerScript.SetEnergy(energyManagerScript.maxEnergy);
+        energyManagerScript.SetEnergy(setEnergy);
+        setEnergy = energyManagerScript.maxEnergy;
     }
 }

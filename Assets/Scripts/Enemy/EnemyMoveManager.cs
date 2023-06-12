@@ -7,8 +7,8 @@ public class EnemyMoveManager : MonoBehaviour
 {
     public List<string> Moves = new List<string>();
     public bool token = false;
+    public string move;
 
-    private string move;
     private EnemyAttack enemyAttackScript;
     private GameObject endTurnManager;
     private HealthManager enemyHealthManagerScript;
@@ -17,6 +17,7 @@ public class EnemyMoveManager : MonoBehaviour
     private EnemyHealFromBlock enemyHealFromBlockScript;
     private EnemyAddToken enemyAddTokenScript;
     private EnemyUseToken enemyUseTokenScript;
+    private HornyStacks hornyStacksScript;
     private void Awake()
     {
         endTurnManager = GameObject.FindGameObjectWithTag("EndTurnManager");
@@ -27,6 +28,7 @@ public class EnemyMoveManager : MonoBehaviour
         enemyHealFromBlockScript = GetComponent<EnemyHealFromBlock>();
         enemyAddTokenScript = GetComponent<EnemyAddToken>();
         enemyUseTokenScript = GetComponent<EnemyUseToken>();
+        hornyStacksScript = GetComponent<HornyStacks>();
     }
     private void Start()
     {
@@ -45,10 +47,12 @@ public class EnemyMoveManager : MonoBehaviour
         {
             case "Attack":
                 Debug.Log(gameObject.name + " Attack");
+                hornyStacksScript.enabled = true;
                 enemyAttackScript.enabled = true;
                 break;
             case "Attack and block":
                 Debug.Log(gameObject.name + " Attack and block");
+                hornyStacksScript.enabled = true;
                 enemyAttackAndBlockScript.enabled = true;
                 break;
             case "Heal from block":
@@ -61,6 +65,7 @@ public class EnemyMoveManager : MonoBehaviour
                 break;
             case "Use token":
                 Debug.Log(gameObject.name + " Using token");
+                hornyStacksScript.enabled = true;
                 enemyUseTokenScript.enabled = true;
                 break;
         }
