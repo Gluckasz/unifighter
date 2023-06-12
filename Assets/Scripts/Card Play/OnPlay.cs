@@ -24,6 +24,11 @@ public class OnPlay : MonoBehaviour
         {
             drawCardsScript.enabled = true;
         }
+        GainEnergy gainEnergyScript = GetComponent<GainEnergy>();
+        if (gainEnergyScript != null)
+        {
+            gainEnergyScript.enabled = true;
+        }
         this.enabled = false;
     }
 }

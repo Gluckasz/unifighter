@@ -33,7 +33,10 @@ public class MoveOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public void OnPointerExit(PointerEventData eventData)
     {
         isHovering = false;
-        LayoutRebuilder.ForceRebuildLayoutImmediate(horizontalLayoutGroup.GetComponent<RectTransform>());
+        if (horizontalLayoutGroup != null)
+        {
+            LayoutRebuilder.ForceRebuildLayoutImmediate(horizontalLayoutGroup.GetComponent<RectTransform>());
+        }
     }
     private void OnDisable()
     {

@@ -15,11 +15,14 @@ public class BringToFrontOnHover : MonoBehaviour, IPointerEnterHandler, IPointer
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        horizontalLayoutGroup.enabled = false;
-        if (transform.parent.childCount > transform.GetSiblingIndex() + 1)
+        if (horizontalLayoutGroup != null)
         {
-            transform.SetSiblingIndex(transform.GetSiblingIndex() + 1);
-            addedOne = true;
+            horizontalLayoutGroup.enabled = false;
+            if (transform.parent.childCount > transform.GetSiblingIndex() + 1)
+            {
+                transform.SetSiblingIndex(transform.GetSiblingIndex() + 1);
+                addedOne = true;
+            }
         }
     }
     // If the card is clicked, don't move it then in SiblingIndex
@@ -34,8 +37,11 @@ public class BringToFrontOnHover : MonoBehaviour, IPointerEnterHandler, IPointer
             transform.SetSiblingIndex(transform.GetSiblingIndex() - 1);
             addedOne = false;
         }
-        horizontalLayoutGroup.enabled = true;
-        LayoutRebuilder.ForceRebuildLayoutImmediate(horizontalLayoutGroup.GetComponent<RectTransform>());
+        if (horizontalLayoutGroup != null)
+        {
+            horizontalLayoutGroup.enabled = true;
+            LayoutRebuilder.ForceRebuildLayoutImmediate(horizontalLayoutGroup.GetComponent<RectTransform>());
+        }
     }
 }
 

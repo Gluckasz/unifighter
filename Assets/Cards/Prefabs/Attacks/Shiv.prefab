@@ -25,7 +25,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8560848437525138270, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
       propertyPath: m_Name
-      value: Odpowiedz z wiedzy
+      value: Shiv
       objectReference: {fileID: 0}
     - target: {fileID: 8560848437525138271, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
       propertyPath: m_Pivot.x
@@ -130,4 +130,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3249439027010439985874013c8470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 7
+  damage: 5

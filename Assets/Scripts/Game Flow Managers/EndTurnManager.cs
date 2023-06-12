@@ -23,6 +23,7 @@ public class EndTurnManager : MonoBehaviour
         enemyMoveManagerScript = enemy.GetComponent<EnemyMoveManager>();
         player = GameObject.FindGameObjectWithTag("Player");
         energyManagerScript = player.GetComponent<EnergyManager>();
+        NewTurn();
     }
     private void OnMouseDown()
     {
