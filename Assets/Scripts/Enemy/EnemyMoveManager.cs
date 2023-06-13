@@ -9,8 +9,9 @@ public class EnemyMoveManager : MonoBehaviour
     public bool token = false;
     public string move;
 
-    private EnemyAttack enemyAttackScript;
+    private GameObject icons;
     private GameObject endTurnManager;
+    private EnemyAttack enemyAttackScript;
     private HealthManager enemyHealthManagerScript;
     private EndTurnManager endTurnManagerScript;
     private EnemyAttackAndBlock enemyAttackAndBlockScript;
@@ -18,8 +19,10 @@ public class EnemyMoveManager : MonoBehaviour
     private EnemyAddToken enemyAddTokenScript;
     private EnemyUseToken enemyUseTokenScript;
     private HornyStacks hornyStacksScript;
+    private IconManager iconManagerScript;
     private void Awake()
     {
+        icons = GameObject.FindGameObjectWithTag("Icons");
         endTurnManager = GameObject.FindGameObjectWithTag("EndTurnManager");
         endTurnManagerScript = endTurnManager.GetComponent<EndTurnManager>();
         enemyHealthManagerScript = GetComponent<HealthManager>();
@@ -29,15 +32,18 @@ public class EnemyMoveManager : MonoBehaviour
         enemyAddTokenScript = GetComponent<EnemyAddToken>();
         enemyUseTokenScript = GetComponent<EnemyUseToken>();
         hornyStacksScript = GetComponent<HornyStacks>();
+        iconManagerScript = icons.GetComponent<IconManager>();
     }
     private void Start()
     {
         move = SelectMove();
+        iconManagerScript.ChangeIcon(move);
     }
     public void EnemyTurn()
     {
         EnemyMove(move);
         move = SelectMove();
+        iconManagerScript.ChangeIcon(move);
         endTurnManagerScript.NewTurn();
     }
 
