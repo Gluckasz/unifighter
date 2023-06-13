@@ -42,7 +42,7 @@ public class HealthManager : MonoBehaviour
         Color healthColor = Color.Lerp(Color.red, Color.green, (float)health / (float)maxHealth);
         if(block > 0)
         {
-            healthColor = Color.blue;
+            healthColor = Color.gray;
         }
         healthBar.color = healthColor;
     }
