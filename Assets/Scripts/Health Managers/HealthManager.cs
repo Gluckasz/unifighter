@@ -1,15 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthManager : MonoBehaviour
 {
     public int health = 5;
     public int block = 0;
     public int maxHealth = 42;
+
+    public Text healthText;
+    public Image healthBar;
+
+    public Text blockText;
+
+    float lerpSpeed;
     private void Awake()
     {
+        healthText.text = "Health: " + health;
         health = maxHealth;
+    }
+    private void Update()
+    {   
+        healthText.text = "Health: " + health;
+
+        blockText.text = "Block: " + block;
+
+        lerpSpeed = 3f * Time.deltaTime;
+
+        healthBarFiller();
+        colorChange();
+    }
+    void healthBarFiller()
+    {
+        // Changing the fill amout of the hp bar
+        healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, (float)health / (float)maxHealth, lerpSpeed);
+    }
+
+    void colorChange()
+    {
+        Color healthColor = Color.Lerp(Color.red, Color.green, (float)health / (float)maxHealth);
+        if(block > 0)
+        {
+            healthColor = Color.blue;
+        }
+        healthBar.color = healthColor;
     }
     public void TakeDamage(int damage)
     {
@@ -29,6 +64,7 @@ public class HealthManager : MonoBehaviour
             // Dies
             health = maxHealth;
         }
+       
     }
     public void ChangeBlock(int blockChange)
     {
