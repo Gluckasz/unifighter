@@ -3374,7 +3374,7 @@ Transform:
   m_GameObject: {fileID: 1906571396}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 1.2, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1690536297}
@@ -3444,11 +3444,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e9e236b2115eee49b4eca53fb87c07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: {fileID: 21300000, guid: a4fc22c8d5133ca428aa3aa4a0ba79da, type: 3}
-  attackAndBlock: {fileID: 0}
-  healFromBlock: {fileID: 0}
-  addToken: {fileID: 0}
-  useToken: {fileID: 0}
+  attack: {fileID: 21300000, guid: 7fc65dbf9fd30fe48a6afd2c34c51ded, type: 3}
+  attackAndBlock: {fileID: 21300000, guid: 90962cd1cc8c7c740ab1cb47b1ea60c7, type: 3}
+  healFromBlock: {fileID: 21300000, guid: 706e4e11f9f891746be04daaf83e3342, type: 3}
+  addToken: {fileID: 21300000, guid: a4d253eecb29cf74ab0f27840f1952e9, type: 3}
+  useToken: {fileID: 21300000, guid: fd7a965fbe7a8df4ea8f69961f3acaed, type: 3}
 --- !u!1001 &1958755767
 PrefabInstance:
   m_ObjectHideFlags: 0

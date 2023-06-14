@@ -13,19 +13,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 28339513307785110, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
       propertyPath: m_Text
-      value: Odpowiedz z wiedzy
+      value: Argue
+      objectReference: {fileID: 0}
+    - target: {fileID: 3332497363850961765, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4709523030403729883, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
       propertyPath: m_text
-      value: "Odpowiedz z wiedzy\u200B"
+      value: "Argue\u200B"
       objectReference: {fileID: 0}
     - target: {fileID: 8560848435921619895, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
       propertyPath: m_text
-      value: Deal 6 damage
+      value: Deal 5 damage
       objectReference: {fileID: 0}
     - target: {fileID: 8560848437525138270, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
       propertyPath: m_Name
-      value: Shiv
+      value: Argue
       objectReference: {fileID: 0}
     - target: {fileID: 8560848437525138271, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
       propertyPath: m_Pivot.x
@@ -110,6 +114,26 @@ PrefabInstance:
     - target: {fileID: 8560848437525138271, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560848437663999140, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560848437663999140, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560848437663999140, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560848437663999141, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 87e1af716c3000e41bbe93f800342b42, type: 3}
+    - target: {fileID: 8560848437663999141, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}

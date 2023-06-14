@@ -7,6 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 28339513307785110, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
+      propertyPath: m_Text
+      value: Motivate
+      objectReference: {fileID: 0}
+    - target: {fileID: 4709523030403729883, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
+      propertyPath: m_text
+      value: "Motivate\u200B"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560848435921619895, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
+      propertyPath: m_text
+      value: Gain 2 energy
+      objectReference: {fileID: 0}
     - target: {fileID: 8560848437525138270, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
       propertyPath: m_Name
       value: Motivate
@@ -95,6 +107,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8560848437663999140, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560848437663999141, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 87caa5fbe22f211409d56dc659c05cdc, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
 --- !u!1 &8708263966460876718 stripped

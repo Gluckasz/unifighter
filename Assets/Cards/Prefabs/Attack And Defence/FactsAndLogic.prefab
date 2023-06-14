@@ -25,7 +25,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8560848435921619895, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
       propertyPath: m_text
-      value: Deal 4 damage and gain 2 block
+      value: Deal 6 damage and gain 4 block
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560848436259059016, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
+      propertyPath: m_Text
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560848436951027452, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
+      propertyPath: m_text
+      value: "2\u200B"
       objectReference: {fileID: 0}
     - target: {fileID: 8560848437525138270, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
       propertyPath: m_Name
@@ -115,6 +123,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8560848437663999140, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560848437663999140, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560848437663999140, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560848437663999141, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6a1da532730df514fa3f80824c3dfbb6, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5068c72ab05a8b448ac87b944f55c9f6, type: 3}
 --- !u!1 &1645302615408187829 stripped
