@@ -5,10 +5,9 @@ using UnityEngine.UI;
 
 public class HealthManager : MonoBehaviour
 {
-    public int health = 5;
-    public int block = 0;
-    public int maxHealth = 42;
-
+    public int health;
+    public int block;
+    public int maxHealth;
     public Text healthText;
     public Image healthBar;
 
