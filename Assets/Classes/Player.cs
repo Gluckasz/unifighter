@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-static class Constants
+public class ConstantPlayer
 {
-    public const int MAX_HP = 100; // maximal deck size
+    public int MAX_HP = 99;
 }
 
 public class Player
@@ -16,7 +16,8 @@ public class Player
 
     public Player()
     {
-        maxHealth = Constants.MAX_HP;
+        ConstantPlayer constants = new ConstantPlayer();
+        maxHealth = constants.MAX_HP;
         currentHealth = maxHealth;
         currentBlock = 0;
     }

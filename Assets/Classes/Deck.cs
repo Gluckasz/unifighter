@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-static class Constants
+public class ConstantDeck
 {
-    public const int MAX_CAPACITY = 99; // maximal deck size
+    public int MAX_CAPACITY = 99;
 }
 public class DeckStack
 {
@@ -16,12 +16,14 @@ public class DeckStack
     // Constructor
     public DeckStack()
     {
-        capacity = Constants.MAX_CAPACITY;
+        ConstantDeck constants = new ConstantDeck();
+        capacity = constants.MAX_CAPACITY;
         size = 0;
-        array = new int[Constants.MAX_CAPACITY];
-        for (int i = 0; i < Constants.MAX_CAPACITY; i++)
+        array = new int[constants.MAX_CAPACITY];
+
+        for (int i = 0; i < constants.MAX_CAPACITY; i++)
         {
-            array[i] = 0; // removing all trash data from deck
+            array[i] = 0;
         }
     }
 
