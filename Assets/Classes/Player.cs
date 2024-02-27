@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+static class Constants
+{
+    public const int MAX_HP = 100; // maximal deck size
+}
+
 public class Player
 {
     // All atributes of the player
@@ -9,6 +14,12 @@ public class Player
     private int currentHealth; // current HP, it cannot rise above maxHealth, whenever it drops below 0 the player dies and game ends
     private int currentBlock; // current block, it is being depleted before currentHealth while taking damage, it cannot be negative, uncapped until balancing
 
+    public Player()
+    {
+        maxHealth = Constants.MAX_HP;
+        currentHealth = maxHealth;
+        currentBlock = 0;
+    }
 
     // Getters
     public int getMaxHealth()
