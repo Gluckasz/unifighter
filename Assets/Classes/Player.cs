@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ConstantPlayer
 {
-    public int MAX_HP = 99;
+    public int MAX_HP = 100;
 }
 
 public class Player
